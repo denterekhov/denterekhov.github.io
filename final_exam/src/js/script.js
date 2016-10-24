@@ -80,7 +80,7 @@ createCORSRequest();
       };
     }; 
 
-    xhr.open("GET", 'https://pixabay.com/api/key=3593835-08e61501cc3c4859963576f14&image_type=photo&per_page=7&q=' + userQuery, true);
+    xhr.open("GET", 'https://pixabay.com/api/?key=3593835-08e61501cc3c4859963576f14&image_type=photo&per_page=7&q=' + userQuery, true);
     xhr.send();
   };
   
