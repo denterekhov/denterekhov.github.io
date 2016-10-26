@@ -4,27 +4,29 @@ $font-stack2: 'Roboto', Arial, sans-serif;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   /*outline: 1px solid green;*/
 }
+
 a {
   text-decoration: none;
 }
 
+.clearfix:after {
+  content:'';
+  clear: both;
+  display: block;
+}
+
 header {
-  /*margin: 0 auto;*/
-  /*width: 1438px;*/
   height: 540px;
-  padding-top: 40px;
+  padding-top: 45px;
   text-align: center;
   background: url(../img/header.jpg)top center fixed no-repeat; 
-  /*rgba(204,204,204,1) no-repeat;*/
 }
 
 .header_login,
 .header_signup {
-  /*margin: 0 auto;*/
-  /*display: inline-block;*/
-  /*width: 83px;*/
   padding: 11px 18px;
   color: white;
   font-family: $font-stack1;
@@ -45,14 +47,14 @@ header {
   margin: 120px 0 40px;
   color: white;
   font-family: $font-stack1;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .header_slogan {
   @extend .header_title;
-  margin: 0;
+  /*margin: 0;*/
   font-size: 30px;
   text-transform: uppercase;
 }
@@ -66,6 +68,7 @@ header {
 }
 
 .header_button {
+  display: block;
   margin: 0 auto;
   width: 280px;
   height: 40px;
@@ -76,7 +79,9 @@ header {
   font-family: $font-stack1;
   font-size: 14px;
   font-weight: 700;
+  cursor: pointer;
 }
+
 
 
 
@@ -108,43 +113,14 @@ header {
   }
 }
 
-/*    top: 10%;
-    width: 30px;
-    height: 55px;
-    opacity: 0.5;
-    z-index: 2;*/
-
-/*.slick-prev {
-  background: url(../sprite/sprite_2.png) 0 0 no-repeat;
-  &:hover{
-    opacity: 1;
-  }   
-}
-
-.slick-next{
-  right: 0;
-  background: url(../sprite/sprite_2.png) -30px 0 no-repeat;
-  &:hover{
-    opacity: 1;
-  }
-}*/
-
-
 .first_slide,
 .second_slide,
 .third_slide {
   position: relative;
-/*  position: absolute;
-  left: 0px;
-  top: 0px;*/
   width: 100%;
   height: 240px;
-/*  opacity: 0;
-  z-index: 1;*/
-  border-radius: 10px; 
-  /*transition: opacity 2s;*/
+  border-radius: 10px;
 }
-
 
 .first_slide {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url('../img/step-1.jpg') center center;
@@ -155,33 +131,6 @@ header {
 .third_slide {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url('../img/step-3.jpg') center center;
 }
-
-
-
-/*.left,
-.right {
-  position: absolute;
-  color: white;
-  font-size: 20px;
-  transform: translateY(-50%);
-  z-index: 3;
-}
-
-.left {
-  top: 50%;
-  left: 0;  
-}
-
-.right {
-  top: 50%;
-  right: 0;
-}*/
-
-
-
-
-
-
 
 .slide_legend {
   position: absolute;
@@ -288,7 +237,6 @@ header {
 
 
 
-
 .partner_name {
   margin: 20px 0px;
   color: #333;
@@ -347,28 +295,6 @@ header {
   width: 100%;
 }
 
-.first {
-  background-image: url(../img/111.jpg);
-}
-.second {
-  background-image: url(../img/222.jpg);
-}
-.third {
-  background-image: url(../img/333.jpg);
-}
-.fourth {
-  background-image: url(../img/444.jpg);
-}
-.fifth {
-  background-image: url(../img/555.jpg);
-}
-.sixth {
-  background-image: url(../img/666.jpg);
-}
-.seventh {
-  background-image: url(../img/777.jpg);
-}
-
 .grid-item_title {
   position: absolute;
   top: 50%;
@@ -384,8 +310,6 @@ header {
     color: white;
   }
 }
-
-
 
 
 
@@ -433,6 +357,7 @@ header {
     font-family: $font-stack1;
     font-size: 14px;
     font-weight: 700;
+    cursor: pointer;
   }
 }
 
@@ -449,7 +374,7 @@ footer {
   margin: 20px 0;
   color: #ff4e50;
   font-family: $font-stack1;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -489,20 +414,22 @@ footer {
     height: 700px;
   }
 
+  .header_login_signup {
+    margin-right: 40px;
+    float: right;
+  }
+
   .header_title {
     margin: 0;
     text-align: left;
+    text-indent: 40px;
   }
 
   .header_slogan {
-    margin-top: 120px;
-    padding: 0 100px;
+    margin-top: 142px;
+    padding: 0 175px;
     font-size: 52px;
     text-align: center;
-  }
-
-  .header_text {
-    font-size: 24px;
   }
 
   .slick-item button {
@@ -530,12 +457,11 @@ footer {
   }
 
 
-
   .slide_title,
   .partners_title,
   .holiday_ideas_title,
   .discover_ideas_title {
-    margin: 90px 0 25px;
+    margin: 91px 0 26px;
   }
 
   .slick-item,
@@ -599,7 +525,7 @@ footer {
   }
   
   footer {
-    padding-top: 40px;
+    padding-top: 33px;
   }
 
   .footer_company_name {
@@ -608,12 +534,17 @@ footer {
 
   .footer_company_block {
     text-align: left;
+    margin-left: 8.33333333%;
   }
 
   .footer_links a {
     margin: 0;
     display: block;
     text-align: left;
+  }
+
+  .footer_partners {
+    margin-left: 16%;
   }
 
   .design {
@@ -624,11 +555,44 @@ footer {
 
 @media (min-width: 940px) {
 
+  .header_title {
+    text-indent: 0;
+  }
+
+  .header_text {
+    margin: 24px 0;
+    font-size: 24px;
+  }
+
+  .header_login_signup {
+    margin-right: 0;
+  }
+
+  .header_button {
+    width: 230px;
+    margin-top: 35px;
+  }
+  .partner_name {
+    margin: 21px 0px 13px;
+  }
   .partner_passion {
     padding: 0 9px;
   }
 
   .slick-item button {
     top: 40%;
+  }
+  .footer_company_name {
+    padding: 0;
+    text-align: left;
+  }
+  .footer_company_block {
+    margin: 0;
+  }
+  .footer_partners {
+    margin-left: 8%;
+  }
+  .design {
+    margin: 0;
   }
 }
