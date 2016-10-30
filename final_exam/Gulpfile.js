@@ -42,7 +42,7 @@ gulp.task('style:build', function() {
         browsers: ['last 30 versions']
     }))
     // .pipe(concatCss())
-    // .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(path.build.css));
 });
 
@@ -51,7 +51,7 @@ gulp.task('js:build', function() {
   gulp.src(path.src.js)
     .pipe(plumber())
     .pipe(concat('main.min.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(path.build.js));
 });
 

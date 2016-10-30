@@ -1,11 +1,14 @@
 $font-stack1: 'Montserrat', Arial, sans-serif;
 $font-stack2: 'Roboto', Arial, sans-serif;
+$color1:      #333;
+$color2:      #ff4e50;
+$color3:      #fff;
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*outline: 1px solid green;*/
 }
 
 a {
@@ -18,76 +21,11 @@ a {
   display: block;
 }
 
-header {
-  height: 540px;
-  padding-top: 45px;
-  text-align: center;
-  background: url(../img/header.jpg)top center fixed no-repeat; 
-}
 
-.header_login,
-.header_signup {
-  padding: 11px 18px;
-  color: white;
-  font-family: $font-stack1;
-  font-size: 14px;
-  font-weight: 700;
-  border: 2px solid transparent;
-  &:hover {
-    border: 2px solid white;
-    border-radius: 21px;
-    color: white;
-    box-shadow: 0 0 5px white;
-  }
-}
-
-
-
-.header_title {
-  margin: 120px 0 40px;
-  color: white;
-  font-family: $font-stack1;
-  font-size: 21px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.header_slogan {
-  @extend .header_title;
-  /*margin: 0;*/
-  font-size: 30px;
-  text-transform: uppercase;
-}
-
-.header_text {
-  margin: 20px 0;
-  color: white;
-  font-family: $font-stack2;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-.header_button {
-  display: block;
-  margin: 0 auto;
-  width: 280px;
-  height: 40px;
-  background-color: #ff4e50;
-  border: none;
-  border-radius: 20px;
-  color: white;
-  font-family: $font-stack1;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-
-
-
+/*SLIDERS BLOCK*/
 .block_title {
   text-align: center;
-  color: #333;
+  color: $color1;
   font-family: $font-stack1;
   font-size: 22px;
   font-weight: 700;
@@ -141,9 +79,9 @@ header {
 .slide_legend_step {
   width: 70px;
   height: 20px;
-  background-color: #ff4e50;
+  background-color: $color2;
   border-radius: 10px;
-  color: white;
+  color: $color3;
   text-align: center;
   line-height: 20px;
   font-family: $font-stack1;
@@ -153,7 +91,7 @@ header {
 
 .slide_legend_title {
   padding: 15px 0px;
-  color: white;
+  color: $color3;
   font-family: $font-stack1;
   font-size: 24px;
   line-height: 24px;
@@ -168,12 +106,7 @@ header {
   font-weight: 300;
 }
 
-
-
-
-
-
-
+/*PARTNERS BLOCK*/
 .partners_title{
   @extend .block_title;
   padding: 0 15px;
@@ -235,11 +168,9 @@ header {
   }
 }
 
-
-
 .partner_name {
   margin: 20px 0px;
-  color: #333;
+  color: $color1;
   font-family: $font-stack1;
   font-size: 14px;
   font-weight: 700;
@@ -261,21 +192,22 @@ header {
     display: block;
     width: 280px;
     height: 40px;
-    border: 2px solid #ff4e50;
+    border: 2px solid $color2;
     border-radius: 20px;
     text-align: center;
     line-height: 38px;
-    color: #ff4e50;
+    color: $color2;
     font-family: $font-stack1;
     font-size: 14px;
     font-weight: 700;
     &:hover{
-      color: #fff;
-      background-color: #ff4e50;
+      color: $color3;
+      background-color: $color2;
     };
   }
 }
 
+/*MASONRY BLOCK*/
 .holiday_ideas_title {
   @extend .block_title;
   margin: 40px 0 20px;
@@ -301,19 +233,14 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  color: $color3;
   font-family: $font-stack1;
   font-size: 22px;
   font-weight: 700;
   text-shadow: 0 0 2px black;
-  &:hover{
-    color: white;
-  }
 }
 
-
-
-
+/*SEARCH BLOCK*/
 .discover_ideas_title {
   @extend .block_title;
   margin: 40px 0 20px;
@@ -321,7 +248,7 @@ header {
 
 .discover_ideas_text {
   text-align: center;
-  color: #333;
+  color: $color1;
   font-family: $font-stack2;
   font-size: 18px;
   font-weight: 300;
@@ -350,10 +277,10 @@ header {
     width: 280px;
     height: 40px;
     margin-bottom: 40px;
-    background-color: #ff4e50;
+    background-color: $color2;
     border: none;
     border-radius: 20px;
-    color: white;
+    color: $color3;
     font-family: $font-stack1;
     font-size: 14px;
     font-weight: 700;
@@ -364,74 +291,10 @@ header {
 .red_line {
   width: 100%;
   height: 4px;
-  background-color: #ff4e50;
-}
-
-footer {
-  height: 190px;
-}
-.footer_company_name {
-  margin: 20px 0;
-  color: #ff4e50;
-  font-family: $font-stack1;
-  font-size: 17px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.footer_title {
-  color: #333;
-  font-family: $font-stack1;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.footer_links {
-  text-align: center;
-  margin: 10px 0 20px;
-  a {
-    display: inline-block;
-    margin-right: 15px;
-    color: #666;
-    font-family: $font-stack2;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 24px;
-  }
-}
-
-.design {
-  margin: 20px auto;
-  display: block;
-  width: 110px;
-  height: 42px;
+  background-color: $color2;
 }
 
 @media (min-width: 768px) {
-  header {
-    height: 700px;
-  }
-
-  .header_login_signup {
-    margin-right: 40px;
-    float: right;
-  }
-
-  .header_title {
-    margin: 0;
-    text-align: left;
-    text-indent: 40px;
-  }
-
-  .header_slogan {
-    margin-top: 142px;
-    padding: 0 175px;
-    font-size: 52px;
-    text-align: center;
-  }
-
   .slick-item button {
     top: 10%;
     width: 30px;
@@ -455,7 +318,6 @@ footer {
       opacity: 1;
     }
   }
-
 
   .slide_title,
   .partners_title,
@@ -495,7 +357,6 @@ footer {
   .grid-sizer,
   .grid-item {
     width: 31.59%;
-    box-sizing: border-box;
   }
 
   .gutter-sizer {
@@ -521,57 +382,16 @@ footer {
       margin: 0;
       width: 160px;
       display: inline-block;
+      &:hover {
+        border: 2px solid $color2;
+        background-color: $color3;
+        color: $color2;
+      }
     }
-  }
-  
-  footer {
-    padding-top: 33px;
-  }
-
-  .footer_company_name {
-    margin: 0;
-  }
-
-  .footer_company_block {
-    text-align: left;
-    margin-left: 8.33333333%;
-  }
-
-  .footer_links a {
-    margin: 0;
-    display: block;
-    text-align: left;
-  }
-
-  .footer_partners {
-    margin-left: 16%;
-  }
-
-  .design {
-    margin: 0 30px 0 0;
-    float: right;
-  }
+  } 
 }
 
 @media (min-width: 940px) {
-
-  .header_title {
-    text-indent: 0;
-  }
-
-  .header_text {
-    margin: 24px 0;
-    font-size: 24px;
-  }
-
-  .header_login_signup {
-    margin-right: 0;
-  }
-
-  .header_button {
-    width: 230px;
-    margin-top: 35px;
-  }
   .partner_name {
     margin: 21px 0px 13px;
   }
@@ -582,17 +402,8 @@ footer {
   .slick-item button {
     top: 40%;
   }
-  .footer_company_name {
-    padding: 0;
-    text-align: left;
-  }
-  .footer_company_block {
-    margin: 0;
-  }
-  .footer_partners {
-    margin-left: 8%;
-  }
-  .design {
-    margin: 0;
-  }
 }
+
+@import "header";
+@import "footer";
+@import "grid";

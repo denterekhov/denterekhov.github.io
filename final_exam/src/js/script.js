@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 //Slider settings
 $(function(){
@@ -20,42 +20,54 @@ $('.grid').masonry({
 
 //Image search
 $(function() {
-  
-  var randomSet = ['sea', 'SPA', 'mountain', 'sport', 'music', 'travel', 'animals', 'cinema', 'cooking', 'beach'];
 
-  function getRandomImages () {
+//Random picture on page load
+  var randomSet = ['sea', 'SPA', 'mountain', 'sport', 'music', 'travel', 'animals', 'cinema', 'cooking', 'beach'];
+  function getRandomImages() {
     var randomNumber = Math.floor(Math.random()*randomSet.length);
     var randomItem = randomSet[randomNumber];
-    getjson(randomItem);
+    var query = "https://pixabay.com/api/?key=3593835-08e61501cc3c4859963576f14&per_page=100&image_type=photo&orientation=horizontal&callback=?&q=" + encodeURIComponent(randomItem);
+    getjson(query);
   };
 
   getRandomImages();
 
-  $('#search').on('click', function(e){
-    var userQuery = $('#query').val();
-    e.preventDefault();
-    $('#query').val('');
-    getjson(userQuery);
+//Add event listeners
+  $('#query').on('keydown', function (event) {  
+    if (event.keyCode == 13) {
+      event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+      search();
+    }
   });
 
-  function getjson(userQuery) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() { 
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        var responseData = JSON.parse(xhr.responseText);
-        reloadMasonry(responseData);
-      };
-    }; 
-    xhr.open('GET', 'https://pixabay.com/api/?key=3593835-08e61501cc3c4859963576f14&image_type=photo&per_page=7&orientation=horizontal&q=' + userQuery, true);
-    xhr.send();
+  $('#search').on('click', function(event) {
+    event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+    search();
+  });
+
+//Picture search
+  function search() {
+    var userQuery = $('#query').val();
+    $('#query').val('');
+    var query = "https://pixabay.com/api/?key=3593835-08e61501cc3c4859963576f14&per_page=100&image_type=photo&orientation=horizontal&callback=?&q=" + encodeURIComponent(userQuery);
+    (userQuery.length > 2) ? getjson(query) : getRandomImages();
   };
 
+//Get JSON
+  function getjson(query) {
+    $.getJSON (query, function(responseData){
+      reloadMasonry(responseData);
+    });
+  };
+
+//Insert pictures and tags in layout
   function reloadMasonry(responseData) {
-    for (var i = 0; i < responseData.hits.length; i++) {
-      var masonryItems = $('.grid-item');
+    var masonryItems = $('.grid-item');
+    for (var i = 0; i < masonryItems.length; i++) {
+      var random = Math.floor(Math.random()*responseData.hits.length);
       var imageTitles = $('.grid-item_title');
-      $(masonryItems[i]).css("background-image","url(" + responseData.hits[i].webformatURL + ")");
-      $(imageTitles[i]).text(responseData.hits[i].tags);
-    };
+      $(masonryItems[i]).css("background-image","url(" + responseData.hits[random].webformatURL + ")");
+      $(imageTitles[i]).text(responseData.hits[random].tags);
+    }
   };
 });

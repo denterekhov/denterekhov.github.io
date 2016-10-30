@@ -1,16 +1,17 @@
+/*GRID*/
 .wrapper {
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 768px) {
   .wrapper {
-    width: 768px;
+    max-width: 768px;
   }
 }
 
 @media (min-width: 940px) {
   .wrapper {
-    width: 940px;
+    max-width: 940px;
   }
 }
 
